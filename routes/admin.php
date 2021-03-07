@@ -22,6 +22,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' =>['auth:admin','admin'], 'a
     Route::resource('blogs', 'BlogController');
     Route::resource('settings', 'SettingController');
     Route::resource('partners', 'PartnerController');
+    Route::resource('testimonials', 'TestimonialController');
     Route::resource('guest-messages', 'GuestMessageController');
 
 

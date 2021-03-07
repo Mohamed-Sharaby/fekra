@@ -18,13 +18,13 @@
 
                     <p class="lead">إذا أنت على الطريق الصحيح مع فكرة , </p>
                     <div class="spacer-20"></div>
-                    <a class="btn-custom" href="about.html">من نحن</a>&nbsp;
-                    <a class="btn-border" href="contact.html">تواصل الان</a>
+                    <a class="btn-custom" href="{{route('site.about')}}">من نحن</a>&nbsp;
+                    <a class="btn-border" href="{{route('site.contact')}}">تواصل الان</a>
                     <div class="mb-sm-30"></div>
                 </div>
 
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".5s">
-                    <img src="{{asset('site')}}/images/assets/1.png" class="img-fluid" alt=""/>
+                    <img src="{{asset('site/images/assets/1.png')}}" class="img-fluid" alt=""/>
                 </div>
             </div>
         </div>
@@ -91,29 +91,7 @@
             </div>
         </div>
     </section>
-    <section id="all-partners" class="pt60 pb60 text-light bg-color-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 wow fadeInUp" data-wow-delay="0s">
-                    <div id="owl-logo" class="logo-carousel owl-carousel owl-theme">
-                        <img src="{{asset('site')}}/images/assets/partner12.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner1.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner2.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner3.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner4.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner5.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner6.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner7.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner8.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner9.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner10.png" class="img-fluid" alt=""/>
-                        <img src="{{asset('site')}}/images/assets/partner11.png" class="img-fluid" alt=""/>
-                    </div>
-                </div>
-                <img src="{{asset('site')}}/images/assets/lamp.png" alt="" class="the-lamp-img wow fadeInDown" data-wow-delay="0s">
-            </div>
-        </div>
-    </section>
+   @include('site.partners-section')
     <section id="section-banner" class="no-top has-a-bg">
         <div class="container">
             <div class="row align-items-center">
@@ -134,7 +112,7 @@
                         العمومية
                     </p>
                     <div class="spacer-half"></div>
-                    <a class="btn-custom" href="about.html">اقرأ المزيد</a>
+                    <a class="btn-custom" href="{{route('site.about')}}">اقرأ المزيد</a>
                 </div>
 
                 <div class="spacer-double"></div>
@@ -145,225 +123,13 @@
             </div>
         </div>
     </section>
-    <section>
 
+    @include('site.services-section')
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-center">
-                        <h2><span class="uptitle id-color">الخدمات</span>تعرف على بعض خدماتنا</h2>
-                        <div class="spacer-20"></div>
-                    </div>
-                </div>
-                <div id="owl-features" class="owl-carousel owl-theme">
+    @include('site.testimonial-section')
 
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>تصميم الفعاليات والمؤتمرات المتخصصة في التنمية المستدامة</h4>
-                    </div>
+   @include('site.blog-section')
 
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>إدارة وتنفيذ حملات التغيير الاجتماعي بوسائل التواصل الاجتماعي</h4>
-                    </div>
-
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>تصميم الفرص التطوعية في المنظمات غير الربحية</h4>
-                    </div>
-
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>بناء وحدات التطوع والمسئولية المجتمعية فى المنشأت</h4>
-                    </div>
-
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>تقديم ورش عمل لتمكين الشباب من المبادئ والطرق المنهجية المتبعة بالتطوع المؤسسي</h4>
-                    </div>
-
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>دراسة الطرق الأخرى والمبتكرة والمتاحة لجمع التبرعات</h4>
-                    </div>
-
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>تقديم الاستشارات والدراسات وتصميم المبدارات النوعية</h4>
-                    </div>
-
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>عقد الشراكات الاجتماعية وفق أولويات المنظمات الأهلية</h4>
-                    </div>
-
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>تنفيذ وبناء استراتيجيات التسويق للمنظمات غير الربحية</h4>
-                    </div>
-
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>البحث عن البرامج التي يمكن للمنظمات الأهلية المشاركة فيها</h4>
-                    </div>
-
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>تدريب وتأهيل الفرق ومدراء التطوع فى المنظمات لتحقيق أثر أعمق</h4>
-                    </div>
-
-                    <div class="feature-box-type-2">
-                        <img src="{{asset('site')}}/images/assets/logo.png" alt="">
-                        <h4>تيسير وتنظيم ورش العمل لتخطيط وتطويرتنفيذ الاستراتيجيات</h4>
-                    </div>
-
-
-                </div>
-
-                <div class="col-md-12 text-center mtop60">
-                    <a class="btn-custom" href="services.html">كل الخدمات</a>
-                </div>
-
-            </div>
-        </div>
-
-    </section>
-    <section id="section-testimonial" class="has-a-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-center">
-                        <h2><span class="uptitle id-color">الأراء</span>ماذا يقولون عنا</h2>
-                        <div class="spacer-20"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel owl-theme wow fadeInUp" id="opinions-carousel">
-                <div class="item">
-                    <div class="de_testi opt-2">
-                        <blockquote>
-                            <p>انطلق مفهوم ريادة الأعمال من مصطلح التغيير والتطوير الذي ارتبط ارتباطا وثيقا
-                                بالاقتصاد</p>
-                            <div class="de_testi_by">
-                                <div class="member-photo">
-                                    <img alt="" class="rounded-circle" src="{{asset('site')}}/images/people/p1.png"/>
-                                </div>
-                                <span>أ.د / سهام اّل إسماعيل</span>
-                            </div>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="de_testi opt-2">
-                        <blockquote>
-                            <p>العمل التطوعي هو رسالة أصلها ومنبعها الدين الاسلامي لما فيها من أثر ايجابي للفرد
-                                والمجتمع</p>
-                            <div class="de_testi_by">
-                                <div class="member-photo">
-                                    <img alt="" class="rounded-circle" src="{{asset('site')}}/images/people/p2.png"/>
-                                </div>
-                                <span>د / أحمد بابدر </span>
-                            </div>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="de_testi opt-2">
-                        <blockquote>
-                            <p>قبل أن يبدأ مفهوم المسئولية الاجتماعية من الشركات اصطلاحا , فهو كان ولا زال مبدأ
-                                نطبقه كأفراد وجماعات</p>
-                            <div class="de_testi_by">
-                                <div class="member-photo">
-                                    <img alt="" class="rounded-circle" src="{{asset('site')}}/images/people/p3.png"/>
-                                </div>
-                                <span>أ / فادي الرابغي</span>
-                            </div>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="de_testi opt-2">
-                        <blockquote>
-                            <p>حينما يصبح الابتكار وريادة الأعمال تحالفا وطنيا تشترك مختلف المؤسسات والكيانات وأفراد
-                                المجتمع فى تحقيقه</p>
-                            <div class="de_testi_by">
-                                <div class="member-photo">
-                                    <img alt="" class="rounded-circle" src="{{asset('site')}}/images/people/p4.png"/>
-                                </div>
-                                <span>أ / عبدالرحمن الخلف</span>
-                            </div>
-                        </blockquote>
-                    </div>
-                </div>
-
-            </div>
-
-
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-center">
-                        <h2><span class="uptitle id-color">المدونة</span>أطلع على أخر الأخبار</h2>
-                        <div class="spacer-20"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb30">
-                    <div class="bloglist item">
-                        <div class="post-content">
-                            <div class="post-image">
-                                <a href="single-blog.html">
-                                    <img alt="" src="{{asset('site')}}/images/news/1.jpg">
-                                </a>
-                                <div class="post-info">
-                                    <div class="inner">
-                                        <span class="post-date">منذ 10 ساعات</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-text">
-                                <h4><a href="#" title="ساعات قليلة وننطلق  , وش تتوقعون مجهزين لكم !">ساعات قليلة
-                                        وننطلق , وش تتوقعون مجهزين لكم !</a></h4>
-                                <p>
-                                    بات الان بضع ساعات قليلة فقط تفصلنا عن انطلاق مفاجئة كبيرة , ترقبونا
-                                    بالانتظاااار ... دمتم سالمين
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb30">
-                    <div class="bloglist item">
-                        <div class="post-content">
-                            <div class="post-image">
-                                <a href="single-blog.html">
-                                    <img alt="" src="{{asset('site')}}/images/news/1.jpg">
-                                </a>
-                                <div class="post-info">
-                                    <div class="inner">
-                                        <span class="post-date">منذ 10 ساعات</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-text">
-                                <h4><a href="#" title="أميرة العطاااء">أميرة العطاااء</a></h4>
-                                <p>
-                                    أميرة العطاء , عندها شي جديد حل لتحدي مبتكر ويتمتع بالاستدامة المالية بس وشو كله
-                                    كم يوم وندري ....
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
     <section id="section-fun-facts" class="pt60 pb60 text-light bg-color-3">
         <div class="container">
             <div class="all-event-timer-wrapper">

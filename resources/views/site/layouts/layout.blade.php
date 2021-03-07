@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <!-- /////////////////////||||||||||||||||||||||||||||| Start Layout |||||||||||||||||||||||||||| -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
     <title>@yield('title')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="dns-prefetch" href="//www.instagram.com">
     <link rel="dns-prefetch" href="//www.linkedin.com">
     <link rel="dns-prefetch" href="//www.facebook.com">
@@ -29,7 +30,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
           content="جمعية فكرة للإبتكار وريادة الأعمال هي جمعية سعودية المنشأ تهتم بالأمور التقنية واعمال الريادة بالمملكة ومنطقة القصيم على الأخص">
-    <link rel="icon" href="{{asset('site')}}/images/assets/logo.png">
+    <link rel="icon" href="{{asset('site/images/assets/logo.png')}}">
     <meta property="og:image" content="images/assets/logo.png">
     @include('site.layouts.styles')
 </head>
@@ -61,8 +62,20 @@
     </div>
 </div>
 
-@include('site.layouts.scripts')
 
+
+
+@include('site.layouts.scripts')
+{{--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>--}}
+{{--<script>--}}
+{{--    toastr.options = {--}}
+{{--        "preventDuplicates": true,--}}
+{{--        "closeButton": true,--}}
+{{--        "positionClass": "toast-top-right",--}}
+{{--        "timeOut": "200000",--}}
+{{--        "newestOnTop": true,--}}
+{{--    }--}}
+{{--</script>--}}
 </body>
 
 </html>

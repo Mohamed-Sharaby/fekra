@@ -25,7 +25,8 @@
                                 <span class="badge badge-info">{{$admin->name}}</span>
                             </h4>
 
-                            <form class="form-horizontal" role="form" method="post" action="{{route('admin.admins.update',$admin->id)}}">
+                            <form class="form-horizontal" role="form" method="post"
+                                  action="{{route('admin.admins.update',$admin->id)}}">
                                 @csrf
                                 {{method_field('put')}}
                                 <div class="form-group row">
@@ -59,8 +60,9 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 control-label">كلمة المرور</label>
                                     <div class="col-md-4">
-                                        <input type="password" class="form-control {{$errors->has('password') ? ' is-invalid' : null}}"
-                                              placeholder="كلمة المرور" name="password">
+                                        <input type="password"
+                                               class="form-control {{$errors->has('password') ? ' is-invalid' : null}}"
+                                               placeholder="كلمة المرور" name="password">
                                         @error('password')
                                         <div class="invalid-feedback" style="color: #ef1010">
                                             {{ $message }}
@@ -86,26 +88,32 @@
                                         </div>
                                         @enderror
                                     </div>
-
-                                    <label class="col-sm-2 control-label"> المنصب</label>
-                                    <div class="col-sm-4">
-                                        <select class="form-control {{$errors->has('roles') ? ' is-invalid' : null}}" name="roles">
-                                            <option disabled selected>اختر المنصب</option>
-                                            @foreach($roles as $role)
-                                                <option value="{{$role->id}}" {{$role->id == $admin->hasRole($role->id)  ? 'selected' : ''}}>{{$role->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('roles')
-                                        <div class="invalid-feedback" style="color: #ef1010">
-                                            {{ $message }}
+                                    @if(!$admin->hasRole('Super Admin'))
+                                        <label class="col-sm-2 control-label"> المنصب</label>
+                                        <div class="col-sm-4">
+                                            <select
+                                                class="form-control {{$errors->has('roles') ? ' is-invalid' : null}}"
+                                                name="roles">
+                                                <option disabled selected>اختر المنصب</option>
+                                                @foreach($roles as $role)
+                                                    <option
+                                                        value="{{$role->id}}" {{$role->id == $admin->hasRole($role->id)  ? 'selected' : ''}}>{{$role->name}}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('roles')
+                                            <div class="invalid-feedback" style="color: #ef1010">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
-                                        @enderror
-                                    </div>
+                                    @endif
                                 </div>
+
 
                                 <div class="text-center form-group row">
                                     <button type="submit"
-                                            class="btn btn-success btn-block waves-effect waves-light m-l-10 btn-md"> حفظ
+                                            class="btn btn-success btn-block waves-effect waves-light m-l-10 btn-md">
+                                        حفظ
                                     </button>
                                 </div>
 

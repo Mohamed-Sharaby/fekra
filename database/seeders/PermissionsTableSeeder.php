@@ -31,6 +31,7 @@ class PermissionsTableSeeder extends Seeder
             'GuestMessages',
             'Partners',
             'Blogs',
+            'Testimonials',
         ];
 
         foreach ($permissions as $permission) {

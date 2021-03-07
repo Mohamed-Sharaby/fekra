@@ -23,6 +23,7 @@ class UpdatePermissionsTableSeeder extends Seeder
             'GuestMessages'=> 'التعامل مع رسائل الزوار ',
             'Partners'=> 'التعامل مع الشركاء ',
             'Blogs'=> 'التعامل مع المدونة',
+            'Testimonials'=> 'التعامل مع الاراء',
         ];
 
         foreach ($permissions as $key => $permission) {

@@ -81,6 +81,13 @@
                     </li>
                 @endcan
 
+                @can('Testimonials')
+                    <li>
+                        <a href="{{route('admin.testimonials.index')}}" class="waves-effect"><i
+                                class="fa fa-comment"></i> <span> الاراء  </span> </a>
+                    </li>
+                @endcan
+
                 @can('GuestMessages')
                     <li>
                         <a href="{{route('admin.guest-messages.index')}}" class="waves-effect"><i
