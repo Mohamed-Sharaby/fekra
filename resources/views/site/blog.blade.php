@@ -11,53 +11,30 @@
 								<div class="spacer-20"></div>
 							</div>
 						</div>
-
+                        @foreach($blogs as $blog)
 						<div class="col-lg-4 col-md-6 mb30">
 							<div class="bloglist item">
 								<div class="post-content">
 									<div class="post-image">
-										<a href="single-blog.html">
-											<img alt="" src="{{asset('site')}}/images/news/1.jpg">
+										<a href="{{route('site.singleBlog',$blog->id)}}">
+											<img alt="" src="{{getImgPath($blog->image)}}">
 										</a>
 										<div class="post-info">
 											<div class="inner">
-												<span class="post-date">منذ 10 ساعات</span>
+												<span class="post-date">{{$blog->created_at->diffForHumans()}}  </span>
 											</div>
 										</div>
 									</div>
 									<div class="post-text">
-										<h4><a href="#" title="ساعات قليلة وننطلق  , وش تتوقعون مجهزين لكم !">ساعات قليلة وننطلق  , وش تتوقعون مجهزين لكم !</a></h4>
-										<p>
-										بات الان بضع ساعات قليلة فقط تفصلنا عن انطلاق مفاجئة كبيرة , ترقبونا بالانتظاااار ... دمتم سالمين
-											</p>
+                                        <h4><a href="{{route('site.singleBlog',$blog->id)}}" title="أميرة العطاااء">{{$blog->title}} </a></h4>
+                                        <p>
+                                            {{$blog->body}}
+                                        </p>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<div class="col-lg-4 col-md-6 mb30">
-							<div class="bloglist item">
-								<div class="post-content">
-									<div class="post-image">
-										<a href="single-blog.html">
-											<img alt="" src="{{asset('site')}}/images/news/1.jpg">
-										</a>
-										<div class="post-info">
-											<div class="inner">
-												<span class="post-date">منذ 10 ساعات</span>
-											</div>
-										</div>
-									</div>
-									<div class="post-text">
-										<h4><a href="#" title="أميرة العطاااء">أميرة العطاااء</a></h4>
-										<p>
-											أميرة العطاء , عندها شي جديد حل لتحدي مبتكر ويتمتع بالاستدامة المالية بس وشو كله كم يوم وندري ....
-										  </p>
-									</div>
-								</div>
-							</div>
-						</div>
-
+                        @endforeach
 					</div>
 				</div>
 			</section>

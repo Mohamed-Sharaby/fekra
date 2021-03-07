@@ -6,7 +6,7 @@
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6 d-none d-lg-block d-xl-block text-center wow fadeInRight" data-wow-delay="0s">
-							<img class="relative img-fluid" src="{{asset('site')}}/images/assets/5.svg" alt="" />
+							<img class="relative img-fluid" src="{{asset('site/images/assets/5.svg')}}" alt="" />
 						</div>
 
 						<div class="col-lg-6 wow fadeInLeft" data-wow-delay="0s">
@@ -56,10 +56,10 @@
 -->
 
 				<div class="col-md-6 single-member-wrapper">
-					<a data-fancybox="gallery" href="{{asset('site')}}/images/people/member2.jpg"><img src="{{asset('site')}}/images/people/member2.jpg" alt=""></a>
+					<a data-fancybox="gallery" href="{{asset('site/images/people/member2.jpg')}}"><img src="{{asset('site/images/people/member2.jpg')}}" alt=""></a>
 				</div>
 				<div class="col-md-6 single-member-wrapper">
-					<a data-fancybox="gallery" href="{{asset('site')}}/images/people/member1.jpg"><img src="{{asset('site')}}/images/people/member1.jpg" alt=""></a>
+					<a data-fancybox="gallery" href="{{asset('site/images/people/member1.jpg')}}"><img src="{{asset('site/images/people/member1.jpg')}}" alt=""></a>
 				</div>
 
 					</div>
@@ -259,21 +259,12 @@
 					<div class="row">
 						<div class="col-md-12 wow fadeInUp" data-wow-delay="0s">
 							<div id="owl-logo" class="logo-carousel owl-carousel owl-theme">
-								<img src="{{asset('site')}}/images/assets/partner12.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner1.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner2.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner3.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner4.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner5.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner6.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner7.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner8.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner9.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner10.png" class="img-fluid" alt="" />
-								<img src="{{asset('site')}}/images/assets/partner11.png" class="img-fluid" alt="" />
+								@foreach($partners as $partner)
+                                <img src="{{getImgPath($partner->image)}}" class="img-fluid" alt="" />
+                                @endforeach
 							</div>
 						</div>
-						<img src="{{asset('site')}}/images/assets/lamp.png" alt="" class="the-lamp-img wow fadeInDown" data-wow-delay="0s">
+						<img src="{{asset('site/images/assets/lamp.png')}}" alt="" class="the-lamp-img wow fadeInDown" data-wow-delay="0s">
 					</div>
 				</div>
 			</section>

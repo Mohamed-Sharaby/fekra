@@ -22,7 +22,8 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('site.about');
+        $partners = Partner::all();
+        return view('site.about',compact('partners'));
     }
 
     public function contact()
@@ -32,11 +33,19 @@ class HomeController extends Controller
 
     public function services()
     {
-        return view('site.services');
+        $services = Service::all();
+        return view('site.services',compact('services'));
     }
 
     public function blog()
     {
-        return view('site.blog');
+        $blogs = Blog::latest()->get();
+        return view('site.blog',compact('blogs'));
+    }
+
+    public function singleBlog($id)
+    {
+        $blog = Blog::findOrFail($id);
+        return view('site.single-blog',compact('blog'));
     }
 }
