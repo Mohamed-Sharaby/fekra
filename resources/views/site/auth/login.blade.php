@@ -1,5 +1,5 @@
 @extends('site.layouts.layout')
-@section('title','login')
+@section('title','دخول')
 
 @section('content')
     <!-- section begin -->
@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 m-auto">
-                        <form action='blank.php' class="row" id='form_subscribe' method="post" name="myForm">
+                        <form action='#' class="row" id='form_subscribe' method="post" name="myForm">
                             <div class="col-md-12 text-center">
                                 <h1>تسجيل الدخول</h1>
                                 <p>ادخل بياناتك وتابع عضويتك الان</p>

@@ -23,13 +23,15 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
+        $pattern = "/^[_a-z0-9-]+(.[_a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)(.[a-z]{2,})$/i";
+
         $rules = [
             'name' => 'required|string|max:100|unique:users,name',
-            'email' => 'required|email|max:100|unique:users,email',
-            'phone' => 'required|unique:users,phone',
+            'email' => 'required|email:rfc,dns|max:100|unique:users,email',
+            'phone' => 'required|numeric|unique:users,phone',
             'password' => 'required|confirmed|min:6',
             'birth_date' => 'required|date',
-            'identity' => 'required',
+            'identity' => 'required|numeric',
             'membership_type' => 'required|in:normal,volunteer',
            // 'image' => 'sometimes|image|mimes:jpg,jpeg,png,bmp,svg,gif|max:2048',
             'is_active' => 'boolean',
@@ -40,10 +42,10 @@ class UserRequest extends FormRequest
             $rules = [
                 'name' => 'required|string|max:100|unique:users,name,'. $this->user->id,
                 'email' => 'required|email|max:100|unique:users,email,' . $this->user->id,
-                'phone' => 'required|unique:users,phone,' . $this->user->id,
+                'phone' => 'required|numeric|unique:users,phone,' . $this->user->id,
                 'password' => 'nullable|confirmed|min:6',
                 'birth_date' => 'required|date',
-                'identity' => 'required',
+                'identity' => 'required|numeric',
                 'membership_type' => 'required|in:normal,volunteer',
                // 'image' => 'sometimes|image|mimes:jpg,jpeg,png,bmp,svg,gif|max:2048',
                 'is_active' => 'boolean',

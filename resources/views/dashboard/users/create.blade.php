@@ -42,7 +42,7 @@
                                     <label class="col-md-2 control-label" for="example-email">البريد
                                         الالكترونى</label>
                                     <div class="col-md-4">
-                                        <input type="email" id="example-email" name="email"
+                                        <input type="email" id="example-email" name="email" value="{{old('email')}}"
                                                class="form-control  {{$errors->has('email') ? ' is-invalid' : null}}"
                                                placeholder="البريد الالكترونى">
                                         @error('email')

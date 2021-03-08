@@ -77,7 +77,7 @@
                                     <div class="col-md-4">
                                         <input type="text"
                                                class="form-control  {{$errors->has('phone') ? ' is-invalid' : null}}"
-                                               placeholder="الجوال" name="phone">
+                                               placeholder="الجوال" name="phone" value="{{old('phone')}}">
                                         @error('phone')
                                         <div class="invalid-feedback" style="color: #ef1010">
                                             {{ $message }}

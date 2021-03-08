@@ -6,9 +6,7 @@
                     <a href="{{route('site.home')}}"><img alt="" class="logo" src="{{asset('site/images/assets/logo.png')}}"></a>
                     <div class="spacer-20"></div>
                     <p>
-                        فكرة تسعى لإيجاد حلول مبتكرة لمواجهة التحديات وحل المشكلات التي تواجه مجتمعاتنا بطرق قابلة
-                        للتنفيذ كمشروع ريادي نستخدم نموذج عمل تجاري لتلبية الإحتياجات الاجتماعية بطرق إبداعية
-                        ومستدامة مالياً .
+                        {{@\App\Models\Setting::whereType('long_text')->where('name','footer_text')->first()->value}}
                     </p>
                 </div>
             </div>
@@ -31,12 +29,24 @@
                     <h5>النشرة الاخبارية</h5>
 
                     <p>اشترك الان في نشرتنا الاخبارية وكن على اطلاع بكل ماهو جديد عنا</p>
-                    <form action="blank.php" class="row" id="form_subscribe">
+                    {{--/////////////////////////////////////////////////////////--}}
+                    <div class="msg2" style="display: none;">
+                        <div class="alert alert-success alert-dismissable  " role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p class="m-0 text-center">تم حفظ البريد الالكترونى بنجاح</p>
+                        </div>
+                    </div>
+                    <p class="error12 text-center mr-0 ml-0" style="margin-right: 100px;margin-left: 100px;"></p>
+                    {{--/////////////////////////////////////////////////////////--}}
+                    <form action="#" class="row" id="form_subscribe">
+                        @csrf
+
                         <div class="col text-center">
-                            <input class="form-control" id="name_1" name="name_1" required
-                                   placeholder="ادخل البريد الالكتروني الخاص بك" type="text"/> <a href="#"
-                                                                                                  id="btn-submit"><i
-                                    class="arrow_left"></i></a>
+                            <input class="form-control"  value="" name="email" id="email11"
+                                   placeholder="ادخل البريد الالكتروني الخاص بك" type="text"/>
+                            <a href="#" id="btn-submit"><i class="arrow_left"></i></a>
                             <div class="clearfix"></div>
                         </div>
                     </form>
@@ -51,9 +61,9 @@
             </div>
             <div class="col-md-6 text-md-right text-sm-left">
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/ideasesa/"><i class="fa fa-facebook fa-lg"></i></a>
-                    <a href="https://twitter.com/ideasesa"><i class="fa fa-twitter fa-lg"></i></a>
-                    <a href="https://www.instagram.com/ideasesa/?igshid=1o9emfti74hin"><i
+                    <a href=" {{@\App\Models\Setting::whereType('url')->where('name','facebook')->first()->value}}" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+                    <a href=" {{@\App\Models\Setting::whereType('url')->where('name','twitter')->first()->value}}" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href=" {{@\App\Models\Setting::whereType('url')->where('name','instagram')->first()->value}}" target="_blank"><i
                             class="fa fa-instagram fa-lg"></i></a>
                 </div>
             </div>

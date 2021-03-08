@@ -24,6 +24,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' =>['auth:admin','admin'], 'a
     Route::resource('partners', 'PartnerController');
     Route::resource('testimonials', 'TestimonialController');
     Route::resource('guest-messages', 'GuestMessageController');
+    Route::resource('mail-lists', 'MailListController');
 
 
     Route::post('active/{id}/role', 'RoleController@active')->name('active.role');

@@ -102,6 +102,13 @@
                     </li>
                 @endcan
 
+
+                    <li>
+                        <a href="{{route('admin.mail-lists.index')}}" class="waves-effect"><i
+                                class="zmdi zmdi-surround-sound"></i> <span> الاشتراكات   </span> </a>
+                    </li>
+
+
             </ul>
             <div class="clearfix"></div>
         </div>

@@ -1,5 +1,5 @@
 @extends('site.layouts.layout')
-@section('title','register')
+@section('title','تسجيل حساب جديد')
 
 @section('content')
     <!-- section begin -->

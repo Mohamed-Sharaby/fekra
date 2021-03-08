@@ -66,6 +66,7 @@
 
 
 @include('site.layouts.scripts')
+@stack('my-js')
 {{--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>--}}
 {{--<script>--}}
 {{--    toastr.options = {--}}
@@ -76,6 +77,8 @@
 {{--        "newestOnTop": true,--}}
 {{--    }--}}
 {{--</script>--}}
+<script src="{{asset('site/js/user/subscribe.js')}}"></script>
+
 </body>
 
 </html>

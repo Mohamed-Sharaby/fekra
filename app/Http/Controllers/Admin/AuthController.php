@@ -36,6 +36,5 @@ class AuthController extends Controller
         return back()->with('error','يوجد خطأ بالبيانات');
     }
 
-
 }
 

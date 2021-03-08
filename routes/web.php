@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Site\AuthController;
 use App\Http\Controllers\Site\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,33 +12,14 @@ Route::group(['middleware'=>'checkBanned','as' => 'site.'], function () {
     Route::get('/single-blog/{id}', [HomeController::class, 'singleBlog'])->name('singleBlog');
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
     Route::post('/contact', [HomeController::class, 'postContact'])->name('postContact');
+    Route::post('/subscribe', [HomeController::class, 'subscribe'])->name('subscribe');
 
 
-//    Route::get('reset', [AuthController::class, 'resetForm'])->name('resetForm');
-//    Route::get('send-code', [AuthController::class, 'sendCode'])->name('sendCode');
-//    Route::post('/change-password', [AuthController::class, 'changePassword'])->name('changePassword');
+    Route::get('forget', [AuthController::class, 'resetForm'])->name('resetForm');
+    Route::get('send-code', [AuthController::class, 'sendCode'])->name('sendCode');
+    Route::post('/change-password', [AuthController::class, 'changePassword'])->name('changePassword');
 
 
 });
-
-
-
-
-
-
-
-
-Route::get('/forget', function () {
-    return view('site.forget');
-});
-
-
-
-
-
-
-//Route::get('/dashboard', function () {
-//    return view('dashboard');
-//})->middleware(['auth'])->name('dashboard');
 
 //require __DIR__.'/auth.php';
