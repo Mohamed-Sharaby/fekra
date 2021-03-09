@@ -88,6 +88,7 @@
                                         </div>
                                         @enderror
                                     </div>
+
                                     @if(!$admin->hasRole('Super Admin'))
                                         <label class="col-sm-2 control-label"> المنصب</label>
                                         <div class="col-sm-4">
@@ -97,7 +98,8 @@
                                                 <option disabled selected>اختر المنصب</option>
                                                 @foreach($roles as $role)
                                                     <option
-                                                        value="{{$role->id}}" {{$role->id == $admin->hasRole($role->id)  ? 'selected' : ''}}>{{$role->name}}</option>
+                                                        value="{{$role->id}}" {{$role->id == $admin->hasRole($role->id)  ? 'selected' : ''}}
+                                                    {{$role->name == 'Super Admin' ? 'disabled' : ''}}>{{$role->name}}</option>
                                                 @endforeach
                                             </select>
                                             @error('roles')

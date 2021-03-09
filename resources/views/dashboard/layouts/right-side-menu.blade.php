@@ -5,14 +5,14 @@
         <!-- User -->
         <div class="user-box">
             <div class="user-img">
-                <img src="{{asset('admin')}}/assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme"
+                <img src="{{asset('site/images/user.jpg')}}" alt="user-img" title="{{auth('admin')->user()->name}}"
                      class="img-circle img-thumbnail img-responsive">
                 <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
             </div>
-            <h5><a href="#">{{auth('admin')->user()->name}}</a></h5>
+            <h5><a href="javascript:void(0)">{{auth('admin')->user()->name}}</a></h5>
             <ul class="list-inline">
                 <li>
-                    <a href="#">
+                    <a href="{{route('admin.admins.edit',auth()->id())}}">
                         <i class="zmdi zmdi-settings"></i>
                     </a>
                 </li>
