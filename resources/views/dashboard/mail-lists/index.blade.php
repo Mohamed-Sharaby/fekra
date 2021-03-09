@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.layout')
-@section('title','الاشتراكات  ')
+@section('title','القائمة البريدية  ')
 
 @section('content')
 

@@ -105,7 +105,7 @@
 
                     <li>
                         <a href="{{route('admin.mail-lists.index')}}" class="waves-effect"><i
-                                class="zmdi zmdi-surround-sound"></i> <span> الاشتراكات   </span> </a>
+                                class="zmdi zmdi-surround-sound"></i> <span> القائمة البريدية   </span> </a>
                     </li>
 
 
