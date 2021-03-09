@@ -26,7 +26,7 @@ class AdminRequest extends FormRequest
         $rules = [
             'name' => 'required|string|max:100|unique:admins,name',
             'email' => 'required|email|max:100|unique:admins,email',
-            'phone' => 'required|numeric|unique:admins,phone',
+            'phone' => 'required|numeric|phone:EG,SA|unique:admins,phone',
             'password' => 'required|confirmed|min:6',
             'permissions'=>'nullable',
             'roles'=>'required',
@@ -37,7 +37,7 @@ class AdminRequest extends FormRequest
             $rules = [
                 'name' => 'required|string|max:100|unique:admins,name,'.$this->admin,
                 'email' => 'required|email|max:100|unique:admins,email,' . $this->admin,
-                'phone' => 'required|numeric|unique:admins,phone,' . $this->admin,
+                'phone' => 'required|numeric|phone:EG,SA|unique:admins,phone,' . $this->admin,
                 'password' => 'nullable|confirmed|min:6',
                 'permissions'=>'nullable',
                 'roles'=>'nullable',

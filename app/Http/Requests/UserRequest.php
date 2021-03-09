@@ -28,7 +28,7 @@ class UserRequest extends FormRequest
         $rules = [
             'name' => 'required|string|max:100|unique:users,name',
             'email' => 'required|email:rfc,dns|max:100|unique:users,email',
-            'phone' => 'required|numeric|unique:users,phone',
+            'phone' => 'required|numeric|phone:EG,SA|unique:users,phone',
             'password' => 'required|confirmed|min:6',
             'birth_date' => 'required|date',
             'identity' => 'required|numeric',
@@ -42,7 +42,7 @@ class UserRequest extends FormRequest
             $rules = [
                 'name' => 'required|string|max:100|unique:users,name,'. $this->user->id,
                 'email' => 'required|email|max:100|unique:users,email,' . $this->user->id,
-                'phone' => 'required|numeric|unique:users,phone,' . $this->user->id,
+                'phone' => 'required|numeric|phone:EG,SA|unique:users,phone,' . $this->user->id,
                 'password' => 'nullable|confirmed|min:6',
                 'birth_date' => 'required|date',
                 'identity' => 'required|numeric',
